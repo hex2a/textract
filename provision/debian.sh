@@ -16,6 +16,8 @@ base=$(pwd)
 
 # Install all of the dependencies required in the examples.
 # http://docs.travis-ci.com/user/installing-dependencies/#Installing-Ubuntu-packages
+apt-get update
+apt-get install software-properties-common -y
 add-apt-repository ppa:mc3man/trusty-media -y
 apt-get update -qq
 sed 's/\(.*\)\#.*/\1/' < $base/requirements/debian | xargs apt-get install -y --fix-missing
